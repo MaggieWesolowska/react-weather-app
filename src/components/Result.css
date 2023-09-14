@@ -8,6 +8,10 @@ p {
   padding: 5px;
 }
 
+.result h2 {
+  text-transform: uppercase;
+}
+
 .result h4 {
   font-weight: normal;
   border: 1px solid #61dafb;
@@ -16,6 +20,7 @@ p {
   text-align: center;
 }
 
-.result h2 {
+.result h3,
+.result h5 {
   font-weight: normal;
 }

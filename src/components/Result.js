@@ -25,8 +25,8 @@ const Result = props => {
 
     content = (
       <>
-        <h2>Results for:</h2>
-        <h1>{city}</h1>
+        <h3>Results for:</h3>
+        <h2>{city}</h2>
         <p>
           Current temperature:{' '}
           <strong>{temp} &#176;C</strong>
@@ -54,7 +54,11 @@ const Result = props => {
 
   return (
     <div className='result'>
-      {error ? `City ${city} not found` : content}
+      {error ? (
+        <h5>City "{city}" not found ..</h5>
+      ) : (
+        content
+      )}
     </div>
   );
 };

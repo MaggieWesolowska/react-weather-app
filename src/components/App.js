@@ -110,6 +110,7 @@ class App extends Component {
     const { value, error } = this.state;
     return (
       <div className='App-header'>
+        <h1>Weather App</h1>
         <Form
           value={value}
           change={this.handleInputChange}
