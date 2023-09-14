@@ -1,4 +1,5 @@
 import React from 'react';
+import './Result.css';
 
 const Result = props => {
   const {
@@ -22,15 +23,31 @@ const Result = props => {
       sunset * 1000
     ).toLocaleTimeString();
     content = (
-      <div>
-        <h2>Results for: {city}</h2>
-        <h4>Current date & time: {date}</h4>
-        <p>Current temperature: {temp} &#176;C</p>
-        <p>Sunrise at: {sunriseTime}</p>
-        <p>Sunset at: {sunsetTime}</p>
-        <p>Pressure: {pressure} hPa</p>
-        <p>Wind: {wind} m/s</p>
-      </div>
+      <>
+        <h2>Results for:</h2>
+        <h1>{city}</h1>
+        <h4>
+          Current date & time:
+          <br />
+          {date}
+        </h4>
+        <p>
+          Current temperature:{' '}
+          <strong>{temp} &#176;C</strong>
+        </p>
+        <p>
+          Sunrise at: <strong>{sunriseTime}</strong>
+        </p>
+        <p>
+          Sunset at: <strong>{sunsetTime}</strong>
+        </p>
+        <p>
+          Pressure: <strong>{pressure} hPa</strong>
+        </p>
+        <p>
+          Wind: <strong>{wind} m/s</strong>
+        </p>
+      </>
     );
   }
 
