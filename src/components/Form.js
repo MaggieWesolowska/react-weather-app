@@ -8,7 +8,7 @@ const Form = props => {
         value={props.value}
         placeholder='Enter City'
         onChange={props.change}></input>
-      <button>Search City</button>
+      <button>Get Weather</button>
     </form>
   );
 };

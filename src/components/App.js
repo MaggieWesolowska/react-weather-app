@@ -5,8 +5,6 @@ import './App.css';
 
 const API_KEY = '378d8782aac3425bf266992253fc2a56';
 
-// 'https://api.openweathermap.org/data/2.5/weather?q=London&appid=378d8782aac3425bf266992253fc2a56&units=metric'
-
 class App extends Component {
   state = {
     value: '',
@@ -65,6 +63,48 @@ class App extends Component {
         });
       });
   };
+
+  // to use flexible input without confirmation button:
+  // componentDidUpdate = (prevProps, prevState) => {
+  // if (this.state.value.length === 0) return
+  //   if (prevState.value !== this.state.value) {
+  //     const API = `https://api.openweathermap.org/data/2.5/weather?q=${this.state.value}&appid=${API_KEY}&units=metric`;
+
+  //     fetch(API)
+  //       .then(response => {
+  //         if (response.ok) {
+  //           return response;
+  //         }
+  //         throw Error(
+  //           'Sorry, something went wrong.. Try again.'
+  //         );
+  //       })
+  //       .then(response => response.json())
+  //       .then(result => {
+  //         const date = new Date()
+  //           .toLocaleString()
+  //           .slice(0, -3);
+
+  //         this.setState({
+  //           date: date,
+  //           city: this.state.value,
+  //           sunrise: result.sys.sunrise,
+  //           sunset: result.sys.sunset,
+  //           temp: result.main.temp,
+  //           pressure: result.main.pressure,
+  //           wind: result.wind.speed,
+  //           error: false,
+  //         });
+  //       })
+  //       .catch(err => {
+  //         console.log(err);
+  //         this.setState({
+  //           error: true,
+  //           city: this.state.value,
+  //         });
+  //       });
+  //   }
+  // };
 
   render() {
     const { value, error } = this.state;
