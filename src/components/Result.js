@@ -2,6 +2,7 @@ import React from 'react';
 
 const Result = props => {
   const {
+    date,
     city,
     sunrise,
     sunset,
@@ -14,14 +15,21 @@ const Result = props => {
   let content = null;
 
   if (!error && city) {
+    const sunriseTime = new Date(
+      sunrise * 1000
+    ).toLocaleTimeString();
+    const sunsetTime = new Date(
+      sunset * 1000
+    ).toLocaleTimeString();
     content = (
       <div>
-        <h1>Weather for: {city}</h1>
-        <div>Temperature: {temp}</div>
-        <div>Sunrise at: {sunrise}</div>
-        <div>Sunset at: {sunset}</div>
-        <div>Pressure: {pressure}</div>
-        <div>Wind: {wind}</div>
+        <h2>Results for: {city}</h2>
+        <h4>Current date & time: {date}</h4>
+        <p>Current temperature: {temp} &#176;C</p>
+        <p>Sunrise at: {sunriseTime}</p>
+        <p>Sunset at: {sunsetTime}</p>
+        <p>Pressure: {pressure} hPa</p>
+        <p>Wind: {wind} m/s</p>
       </div>
     );
   }
