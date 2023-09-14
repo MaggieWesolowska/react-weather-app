@@ -42,9 +42,12 @@ class App extends Component {
       })
       .then(response => response.json())
       .then(result => {
-        const date = new Date().toLocaleString();
+        const date = new Date()
+          .toLocaleString()
+          .slice(0, -3);
+
         this.setState({
-          date,
+          date: date,
           city: this.state.value,
           sunrise: result.sys.sunrise,
           sunset: result.sys.sunset,

@@ -16,21 +16,17 @@ const Result = props => {
   let content = null;
 
   if (!error && city) {
-    const sunriseTime = new Date(
-      sunrise * 1000
-    ).toLocaleTimeString();
-    const sunsetTime = new Date(
-      sunset * 1000
-    ).toLocaleTimeString();
+    const sunriseTime = new Date(sunrise * 1000)
+      .toLocaleTimeString()
+      .slice(0, -3);
+    const sunsetTime = new Date(sunset * 1000)
+      .toLocaleTimeString()
+      .slice(0, -3);
+
     content = (
       <>
         <h2>Results for:</h2>
         <h1>{city}</h1>
-        <h4>
-          Current date & time:
-          <br />
-          {date}
-        </h4>
         <p>
           Current temperature:{' '}
           <strong>{temp} &#176;C</strong>
@@ -47,6 +43,11 @@ const Result = props => {
         <p>
           Wind: <strong>{wind} m/s</strong>
         </p>
+        <h4>
+          Your current date & time:
+          <br />
+          {date}
+        </h4>
       </>
     );
   }
